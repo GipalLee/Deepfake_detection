@@ -25,8 +25,8 @@ AEGuard is an adversarial sample detection model based on edge noise features, w
 * OpenCV 4
 
 ## Proposed System
-The method is divided into a preprocessing process and a classification process. The pre-processing process extracts a face image from a frame image, extracts computer vision features, and then extracts the difference between frames. The classification process de-tects a deepfake through DNN by obtaining a variance of a certain number of frames from the data that has passed through the previous process.
 ![image](https://user-images.githubusercontent.com/55551567/118912037-25f9e600-b962-11eb-8498-be8c79b87422.png)
+The method is divided into a preprocessing process and a classification process. The pre-processing process extracts a face image from a frame image, extracts computer vision features, and then extracts the difference between frames. The classification process de-tects a deepfake through DNN by obtaining a variance of a certain number of frames from the data that has passed through the previous process.
 
 ## Features
 ![image](https://user-images.githubusercontent.com/55551567/118912273-7f621500-b962-11eb-889b-ffda140ba2d4.png)
@@ -40,6 +40,7 @@ The extracted features are shown in Table 2. mse(mean squared error) measures th
 
 
 ## Performance
-![image](https://user-images.githubusercontent.com/55551567/118912382-b0424a00-b962-11eb-9ea5-f29d3a35ae1b.png)
+![image](https://user-images.githubusercontent.com/55551567/118912468-cf40dc00-b962-11eb-83cd-363f6c198609.png)
+
 
 
