@@ -4,8 +4,7 @@
 
 ## Motivation
 
-As computer vision technology and image-based machine learning have developed and widespread, massive security systems based on image data are designed and deployed. At the same time, adversarial attack, the security attack that makes the image-based machine learning model misjudge by modulating input image, also has developed and widespread.
-
+Deepfakes can be exploited for political abuse, pornography, and fake information.
 AEGuard is an adversarial sample detection model based on edge noise features, which commonly appears in adversarial samples.
 
 ## Tech/framework used
@@ -25,29 +24,18 @@ AEGuard is an adversarial sample detection model based on edge noise features, w
   * Pandas 1.1.3 or greater
 * OpenCV 4
 
-## Features
+## Proposed System
 
-AEGuard detects adversarial sample.
+![image](https://user-images.githubusercontent.com/55551567/118912037-25f9e600-b962-11eb-8498-be8c79b87422.png)
 
-## Installation
 
-### Linux(Ubuntu)
 
-```bash
-#Install Python3 and Git
-sudo apt install python3 python3-pip git
+### Frames showing a significant rate of change
+![image](https://user-images.githubusercontent.com/55551567/118912104-3f029700-b962-11eb-9d6b-e67eb245bd4b.png)
 
-#Install requirements (You can use tensorflow-gpu instead of tensorflow if you have CUDA-supported GPU)
-pip3 install jupyter tensorflow scikit-learn scikit-image numpy pandas
 
-#Download AEGuard source
-git clone https://github.com/junhyeok-dev/AEGuard.git
-```
 
-## How to use?
-
-Building executable binary.
 
 ## Performance
+![image](https://user-images.githubusercontent.com/55551567/118911995-124e7f80-b962-11eb-9781-0d4039c75b6f.png)
 
-AEGuard shows 90.1043% detection accuracy for JSMA (e=0.1) adversarial samples. It is 12.94% higher than Grosse et al. (2018)
