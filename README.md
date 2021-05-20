@@ -3,9 +3,8 @@
 ![version](https://img.shields.io/badge/version-1.0rc1-blue) ![version](https://img.shields.io/badge/status-rc-blue) ![version](https://img.shields.io/badge/build-passing-green) ![version](https://img.shields.io/badge/license-MIT-blue)
 
 ## Motivation
+Deepfake is a technology that uses artificial intelligence to synthesize another per-son's face with the face of a person appearing in a video and manipulate the target person doing or saying things.Deepfakes can be exploited for political abuse, pornography, and fake information.
 
-Deepfakes can be exploited for political abuse, pornography, and fake information.
-AEGuard is an adversarial sample detection model based on edge noise features, which commonly appears in adversarial samples.
 
 ## Tech/framework used
 
