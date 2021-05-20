@@ -197,12 +197,12 @@ def dctCoefficient(image):
 
     return image
 
-TRAIN_PATH = './videos/sample/'
+TRAIN_PATH = './dataset/faceswap/'
 train_fns = sorted(glob.glob(TRAIN_PATH + '*.mp4'))
 print('There are {} samples in the train set.'.format(len(train_fns)))
 
 # video data extraction
-for i in range(50, 53):
+for i in range(len(train_fns)):
 
     # 동영상 이름 가져오기
     videoname = train_fns[i]
@@ -210,7 +210,7 @@ for i in range(50, 53):
     print(videoname)
 
     # 프레임 읽어서 연결
-    for i in range(300):  # 가져온 동영상 얼굴 사진들로 프레임 생성
+    for i in range(240):  # 가져온 동영상 얼굴 사진들로 프레임 생성
         frame = cv2.imread(videoname + '_' + str(i) + '.jpg')
         frames.append(frame)
 

@@ -6,17 +6,17 @@ from sklearn.preprocessing import StandardScaler
 #s_scaler = MinMaxScaler()
 s_scaler = StandardScaler()
 # load the filenames for train videos
-TRAIN_PATH = './videos/sample/'
+TRAIN_PATH = './dataset/original/'
 train_fns = sorted(glob.glob(TRAIN_PATH + '*.csv'))
 print('There are {} samples in the train set.'.format(len(train_fns)))
 
-resfile = open("var.csv", "a")
+resfile = open("original_variance_50.csv", "a")
 resfile.write(
     "mse,psnr,ssim,hist_diff,r_avg_diff,g_avg_diff,b_avg_diff,r_max_diff,g_max_diff,b_max_diff,h_avg_diff,s_avg_diff,v_avg_diff,h_max_diff,s_max_diff,v_max_diff,matrix_diff_r,matrix_diff_g,matrix_diff_b, totalentropy, totalvariance, edgedensity, edgeentropy, dctcoefficient,deepfake\n")
 
 for file in train_fns :
     fake = 0
-    if file.startswith('./videos/sample\\fake'):
+    if file.startswith('./videos/mine\\fake'):
         fake = 1
     df = pd.read_csv(file)
     for i in range(len(df.columns)):
@@ -24,8 +24,8 @@ for file in train_fns :
         df.iloc[:, i] = df.iloc[:, 0] / df.iloc[:, i].mean()
 
 
-    for i in range(0,len(df),30) :
-        cur = df[i:i+30].var(axis=0)
+    for i in range(0,len(df),50) :
+        cur = df[i]
 
         resfile.write(
             str(cur[0]) + ',' + str(cur[1]) + ',' + str(cur[2]) + ',' + str(cur[3]) + ',' +

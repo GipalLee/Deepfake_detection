@@ -14,7 +14,7 @@ from PIL import Image
 
 
 # load the filenames for train videos
-TRAIN_PATH = './videos/samp/'
+TRAIN_PATH = './dataset/faceswap/'
 train_fns = sorted(glob.glob(TRAIN_PATH + '*.mp4'))
 print('There are {} samples in the train set.'.format(len(train_fns)))
 
@@ -33,7 +33,7 @@ def get_frames(filename):
     cap = cv2.VideoCapture(filename)
 
     # while(cap.isOpened()):
-    while len(frames) < 301:
+    while len(frames) < 241:
         ret, frame = cap.read()
 
         if not ret:
@@ -46,18 +46,18 @@ def get_frames(filename):
     cv2.destroyAllWindows()
     return frames
 
-train_fns = sorted(train_fns,key=lambda x:train_fns[22:])
+
 
 
 #얼굴 감지
 # Create face detector
-for video in train_fns[0:]:
+for video in train_fns[:]:
     print(video)
     frames = get_frames(video)
     try :
         mtcnn = MTCNN(margin=20, keep_all=False, post_process=False)  # keep_all : multiple faces in a single image,device='cuda:0'device='cuda:0'
-        save_paths = [str(video) + f'_{i}.jpg' for i in range(len(frames[:300]))]
-        mtcnn(frames[:300], save_path=save_paths)
+        save_paths = [str(video) + f'_{i}.jpg' for i in range(len(frames[:241]))]
+        mtcnn(frames[:241], save_path=save_paths)
     except TypeError :
         print(video + "error")
         continue
